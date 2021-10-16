@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
-import { Typography, Zoom, Button } from '@mui/material';
+import { Typography, Zoom } from '@mui/material';
 
 import useStyles from './styles';
 
@@ -8,9 +8,9 @@ const WelcomeScreen = () => {
   const classes = useStyles();
   const history = useHistory();
 
-  // useEffect(() => {
-  //   setTimeout(() => history.push('/home'), 1500);
-  // }, []);
+  useEffect(() => {
+    setTimeout(() => history.push('/home'), 3200);
+  }, []);
 
   return (
     <div className={classes.container}>
@@ -29,18 +29,10 @@ const WelcomeScreen = () => {
           sx={{ fontWeight: 'bold' }}
           color="primary"
         >
-          APP_NAME_HERE
+          Kalkulator ryzyka
         </Typography>
-        <Typography color="primary">subtitle</Typography>
+        <Typography color="primary">COVID-19</Typography>
       </div>
-      <Button
-        type="submit"
-        fullWidth
-        variant="contained"
-        onClick={() => history.push('/home')}
-      >
-        Open App
-      </Button>
     </div>
   );
 };

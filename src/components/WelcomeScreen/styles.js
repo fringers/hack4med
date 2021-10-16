@@ -7,8 +7,9 @@ export default makeStyles(({ palette, spacing }) => ({
     flexDirection: 'column',
     height: '100%',
     justifyContent: 'center',
-    background: palette.background.paper,
-    borderRadius: 47,
+    background: palette.background.new,
+    borderRadius: 44,
+    padding: spacing(2),
   },
   wrapper: {
     paddingBottom: spacing(12),

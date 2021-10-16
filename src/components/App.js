@@ -8,6 +8,7 @@ import { theme, offlineTheme } from './themes';
 
 import WelcomeScreen from './WelcomeScreen';
 import HomeScreen from './HomeScreen';
+import ResultScreen from './ResultScreen';
 
 const useStyles = makeStyles(() => ({
   switchWrapper: {
@@ -27,11 +28,11 @@ const useStyles = makeStyles(() => ({
   },
   mobileWrapper: {
     position: 'absolute',
-    marginLeft: 47,
-    width: 453,
+    marginLeft: 48,
+    width: 452,
     marginTop: 45,
     height: 980,
-    borderRadius: 47,
+    borderRadius: 46,
     overflow: 'hidden',
   },
   img: {
@@ -124,6 +125,17 @@ const App = () => {
                 exact
                 path="/home"
                 component={HomeScreen}
+              />
+              <AnimatedRoute
+                atEnter={{ offset: -100 }}
+                atLeave={{ offset: -100 }}
+                atActive={{ offset: 0 }}
+                mapStyles={(styles) => ({
+                  transform: `translateX(${styles.offset}%)`,
+                })}
+                exact
+                path="/result"
+                component={ResultScreen}
               />
             </AnimatedSwitch>
           </BrowserRouter>

@@ -14,7 +14,7 @@ export const theme = createTheme({
       dark: amber[900],
     },
     background: {
-      paper: `linear-gradient(60deg, #FFF 0%, ${teal[200]} 100%);`,
+      new: `linear-gradient(60deg, #FFF 0%, ${teal[200]} 100%);`,
       default: `linear-gradient(60deg, #FFF 0%, ${teal[50]} 100%);`,
     },
   },
@@ -32,7 +32,9 @@ export const offlineTheme = createTheme({
       light: blueGrey[100],
       dark: blueGrey[900],
     },
-    // background: {
+    background: {
+      new: `linear-gradient(60deg, #FFF 0%, ${teal[200]} 100%);`,
+    },
     //   paper: `linear-gradient(60deg, #FFF 0%, ${teal[200]} 100%);`,
     //   default: `linear-gradient(60deg, #FFF 0%, ${teal[50]} 100%);`,
     // },
