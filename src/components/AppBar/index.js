@@ -14,9 +14,9 @@ import makeStyles from '@mui/styles/makeStyles';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft } from '@fortawesome/free-solid-svg-icons';
 
-const useStyles = makeStyles(() => ({
-  grow: {
-    flexGrow: 1,
+const useStyles = makeStyles(({ spacing }) => ({
+  container: {
+    marginBottom: spacing(2),
   },
 }));
 
@@ -27,7 +27,7 @@ const AppBar = ({ title = 'Repo' }) => {
   const show = useMediaQuery('(min-width:260px)');
 
   return (
-    <MuiAppBar position="sticky">
+    <MuiAppBar className={classes.container} position="sticky">
       <Toolbar>
         {location.pathname !== '/home' ? (
           <IconButton
@@ -43,7 +43,6 @@ const AppBar = ({ title = 'Repo' }) => {
           ''
         )}
         {show && <Typography variant="h6">{title}</Typography>}
-        <div className={classes.grow} />
       </Toolbar>
     </MuiAppBar>
   );

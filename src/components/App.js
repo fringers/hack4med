@@ -3,12 +3,11 @@ import { BrowserRouter } from 'react-router-dom';
 import { AnimatedSwitch, AnimatedRoute } from 'react-router-transition';
 import { Snackbar } from '@mui/material';
 import makeStyles from '@mui/styles/makeStyles';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { ThemeProvider } from '@mui/material/styles';
+import { theme, offlineTheme } from './themes';
 
 import WelcomeScreen from './WelcomeScreen';
 import HomeScreen from './HomeScreen';
-
-const theme = createTheme();
 
 const useStyles = makeStyles(() => ({
   switchWrapper: {
@@ -71,7 +70,7 @@ const App = () => {
 
   return (
     <UserContext.Provider value={'user'}>
-      <ThemeProvider theme={theme}>
+      <ThemeProvider theme={online ? theme : offlineTheme}>
         <Snackbar
           classes={{ root: classes.snackbar }}
           anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
