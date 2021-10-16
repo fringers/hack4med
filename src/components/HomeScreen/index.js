@@ -1,7 +1,7 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
 
-import Fab from '@material-ui/core/Fab';
+import Fab from '@mui/material/Fab';
 import AppBar from '../AppBar';
 import useStyles from './styles';
 

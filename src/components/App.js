@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import { AnimatedSwitch, AnimatedRoute } from 'react-router-transition';
-import { Snackbar, makeStyles } from '@material-ui/core';
-// import { ThemeProvider } from '@material-ui/core/styles';
+import { Snackbar } from '@mui/material';
+import makeStyles from '@mui/styles/makeStyles';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 import WelcomeScreen from './WelcomeScreen';
 import HomeScreen from './HomeScreen';
-// import { theme, offlineTheme } from './themes';
+
+const theme = createTheme();
 
 const useStyles = makeStyles(() => ({
   switchWrapper: {
@@ -69,7 +71,7 @@ const App = () => {
 
   return (
     <UserContext.Provider value={'user'}>
-      {/* <ThemeProvider theme={online ? theme() : offlineTheme()}> */}
+      <ThemeProvider theme={theme}>
         <Snackbar
           classes={{ root: classes.snackbar }}
           anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
@@ -108,7 +110,7 @@ const App = () => {
             />
           </AnimatedSwitch>
         </BrowserRouter>
-      {/* </ThemeProvider> */}
+      </ThemeProvider>
     </UserContext.Provider>
   );
 };

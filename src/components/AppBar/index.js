@@ -6,9 +6,10 @@ import {
   Toolbar,
   IconButton,
   Typography,
-  makeStyles,
   useMediaQuery,
-} from '@material-ui/core';
+} from '@mui/material';
+
+import makeStyles from '@mui/styles/makeStyles';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft } from '@fortawesome/free-solid-svg-icons';
@@ -34,6 +35,7 @@ const AppBar = ({ title = 'Repo' }) => {
             color="inherit"
             aria-label="back"
             onClick={() => history.goBack()}
+            size="large"
           >
             <FontAwesomeIcon icon={faChevronLeft} />
           </IconButton>
