@@ -3,11 +3,12 @@ import makeStyles from '@mui/styles/makeStyles';
 export default makeStyles(({ palette, spacing }) => ({
   container: {
     alignItems: 'center',
-    backgroundColor: palette.primary.light,
     display: 'flex',
     flexDirection: 'column',
-    height: '100vh',
+    height: '100%',
     justifyContent: 'center',
+    background: palette.background.paper,
+    borderRadius: 47,
   },
   wrapper: {
     paddingBottom: spacing(12),
@@ -15,7 +16,8 @@ export default makeStyles(({ palette, spacing }) => ({
   img: {
     width: 256,
   },
-  title: {
+  text: {
     marginBottom: spacing(12),
+    textAlign: 'center',
   },
 }));

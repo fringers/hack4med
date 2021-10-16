@@ -11,17 +11,32 @@ import HomeScreen from './HomeScreen';
 
 const useStyles = makeStyles(() => ({
   switchWrapper: {
-    position: 'relative',
-    '& > div': {
-      width: '100%',
-      position: 'absolute',
+    height: '100%',
+    '& > *:first-child': {
+      height: '100%',
+      '& > *:first-child': {
+        height: '100%',
+        '& > *:first-child': {
+          height: '100%',
+        },
+      },
     },
   },
   snackbar: {
     bottom: 80,
   },
-  snackbar2: {
-    bottom: 140,
+  mobileWrapper: {
+    position: 'absolute',
+    marginLeft: 47,
+    width: 453,
+    marginTop: 45,
+    height: 980,
+    borderRadius: 47,
+    overflow: 'hidden',
+  },
+  img: {
+    position: 'absolute',
+    width: 560,
   },
 }));
 
@@ -71,44 +86,48 @@ const App = () => {
   return (
     <UserContext.Provider value={'user'}>
       <ThemeProvider theme={online ? theme : offlineTheme}>
-        <Snackbar
-          classes={{ root: classes.snackbar }}
-          anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
-          open={openSnackbar}
-          onClose={() => setOpenSnackbar(false)}
-          message={getSnackbarMessgae(online, uploading)}
-        />
-        <BrowserRouter>
-          <AnimatedSwitch
-            atEnter={{ opacity: 0 }}
-            atLeave={{ opacity: 0 }}
-            atActive={{ opacity: 1 }}
-            className={classes.switchWrapper}
-          >
-            <AnimatedRoute
-              atEnter={{ offset: -100 }}
-              atLeave={{ offset: -100 }}
-              atActive={{ offset: 0 }}
-              mapStyles={(styles) => ({
-                transform: `translateX(${styles.offset}%)`,
-              })}
-              exact
-              path="/"
-              component={WelcomeScreen}
-            />
-            <AnimatedRoute
-              atEnter={{ offset: -100 }}
-              atLeave={{ offset: -100 }}
-              atActive={{ offset: 0 }}
-              mapStyles={(styles) => ({
-                transform: `translateX(${styles.offset}%)`,
-              })}
-              exact
-              path="/home"
-              component={HomeScreen}
-            />
-          </AnimatedSwitch>
-        </BrowserRouter>
+        <img className={classes.img} src="/iphone-12_b.png" />
+        <div className={classes.mobileWrapper}>
+          <Snackbar
+            classes={{ root: classes.snackbar }}
+            anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
+            open={openSnackbar}
+            onClose={() => setOpenSnackbar(false)}
+            message={getSnackbarMessgae(online, uploading)}
+          />
+          <BrowserRouter>
+            <AnimatedSwitch
+              atEnter={{ opacity: 0 }}
+              atLeave={{ opacity: 0 }}
+              atActive={{ opacity: 1 }}
+              className={classes.switchWrapper}
+            >
+              <AnimatedRoute
+                atEnter={{ offset: -100 }}
+                atLeave={{ offset: -100 }}
+                atActive={{ offset: 0 }}
+                mapStyles={(styles) => ({
+                  transform: `translateX(${styles.offset}%)`,
+                  height: '100%',
+                })}
+                exact
+                path="/"
+                component={WelcomeScreen}
+              />
+              <AnimatedRoute
+                atEnter={{ offset: -100 }}
+                atLeave={{ offset: -100 }}
+                atActive={{ offset: 0 }}
+                mapStyles={(styles) => ({
+                  transform: `translateX(${styles.offset}%)`,
+                })}
+                exact
+                path="/home"
+                component={HomeScreen}
+              />
+            </AnimatedSwitch>
+          </BrowserRouter>
+        </div>
       </ThemeProvider>
     </UserContext.Provider>
   );

@@ -1,7 +1,7 @@
 # hack4med app
 
-`npm i`
+`yarn install`
 
-`npm start`
+`yarn start`
 
 `http://localhost:3000/`

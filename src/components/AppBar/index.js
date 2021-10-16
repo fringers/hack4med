@@ -20,7 +20,7 @@ const useStyles = makeStyles(({ spacing }) => ({
   },
 }));
 
-const AppBar = ({ title = 'Repo' }) => {
+const AppBar = ({ title = 'APP_NAME_HERE' }) => {
   const classes = useStyles();
   const history = useHistory();
   const location = useLocation();

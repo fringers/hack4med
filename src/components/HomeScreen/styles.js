@@ -2,12 +2,24 @@ import makeStyles from '@mui/styles/makeStyles';
 
 export default makeStyles((theme) => ({
   container: {
-    backgroundColor: theme.palette.primary.light,
-    height: `${window.innerHeight}px`,
+    background: theme.palette.background.default,
+    borderRadius: 47,
+    height: '100%',
+  },
+  titleWrapper: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignContent: 'center',
+    padding: theme.spacing(2),
+    color: theme.palette.primary.dark,
   },
   formWrapper: {
+    padding: theme.spacing(2),
     display: 'flex',
     flexDirection: 'column',
+  },
+  textField: {
+    marginBottom: theme.spacing(2),
   },
   wrapper: {
     alignItems: 'center',
