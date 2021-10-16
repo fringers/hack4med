@@ -13,6 +13,7 @@ import ResultScreen from './ResultScreen';
 const useStyles = makeStyles(() => ({
   switchWrapper: {
     height: '100%',
+    // hack to make the ios border work
     '& > *:first-child': {
       height: '100%',
       '& > *:first-child': {
@@ -63,7 +64,7 @@ const App = () => {
     setOpenSnackbar(true);
 
     if (myCache.length) {
-      //TODO: upload cached requests
+      //TODO: for cached requests
       // myCache.forEach(
       // );
       window.myCache = [];

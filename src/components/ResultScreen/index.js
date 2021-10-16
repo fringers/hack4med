@@ -1,9 +1,11 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
 import classNames from 'classnames';
-import { Button } from '@mui/material';
-import { Typography } from '@mui/material';
+import Tour from 'reactour';
+import { Button, Typography } from '@mui/material';
+import { teal } from '@mui/material/colors';
 
+import steps from './steps';
 import useStyles from './styles';
 
 const OK = () => (
@@ -39,10 +41,16 @@ const ERROR = () => (
 const HomeScreen = () => {
   const classes = useStyles();
   const history = useHistory();
+  const [message, setMessage] = React.useState(0);
+  const [isTourOpen, setIsTourOpen] = React.useState(
+    localStorage.getItem('sawTour2') !== 'false'
+  );
 
-  const ok = true;
-  const warning = false;
-  const error = false;
+  const updatedSteps = steps(setMessage);
+
+  const ok = message == 1;
+  const warning = message == 2;
+  const error = message == 3;
 
   return (
     <div
@@ -53,8 +61,23 @@ const HomeScreen = () => {
         error && classes.error
       )}
     >
+      <Tour
+        accentColor={teal[500]}
+        rounded={8}
+        scrollDuration={2}
+        steps={updatedSteps}
+        stepInteraction={false}
+        isOpen={isTourOpen}
+        onRequestClose={() => {
+          localStorage.setItem('sawTour2', 'false');
+          setIsTourOpen(false);
+          setMessage(1);
+        }}
+      />
       <div className={classes.contentWrapper}>
-        <OK />
+        {ok && <OK />}
+        {warning && <WARNING />}
+        {error && <ERROR />}
       </div>
       <div className={classes.buttonWrapper}>
         <Button variant="contained" onClick={() => history.push('/home')}>

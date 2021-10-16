@@ -3,6 +3,7 @@ import { useHistory } from 'react-router-dom';
 import Tour from 'reactour';
 import { Button, TextField, MenuItem } from '@mui/material';
 import { Typography } from '@mui/material';
+import { teal } from '@mui/material/colors';
 
 import steps from './steps';
 import useStyles from './styles';
@@ -45,7 +46,7 @@ const HomeScreen = () => {
   const classes = useStyles();
   const history = useHistory();
   const [isTourOpen, setIsTourOpen] = useState(
-    localStorage.getItem('newUser') !== 'false'
+    localStorage.getItem('sawTour1') !== 'false'
   );
   const [plec, setPlec] = useState('Kobieta');
   const [wiek, setWiek] = useState(20);
@@ -68,10 +69,13 @@ const HomeScreen = () => {
   return (
     <div className={classes.container}>
       <Tour
+        accentColor={teal[500]}
+        rounded={8}
+        scrollDuration={2}
         steps={steps}
         isOpen={isTourOpen}
         onRequestClose={() => {
-          localStorage.setItem('newUser', 'false');
+          localStorage.setItem('sawTour1', 'false');
           setIsTourOpen(false);
         }}
       />
