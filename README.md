@@ -6,7 +6,7 @@ This project consist of a python model data, mobile/web app and presentation
 
 - <https://fringers-hack4med.web.app/>
 - [modele](./python/)
-- [prezenracja.pdf](<./prezentacja).pdf>)
+- [prezenracja.pdf](./prezentacja.pdf)
 
 ## Screenshots
 
@@ -20,3 +20,9 @@ This project consist of a python model data, mobile/web app and presentation
 `yarn start`
 
 `http://localhost:3000/`
+
+## TODO:
+
+- ✅ upload app screenshots
+- ⬜️ update python files
+- ⬜️ upload presentation
