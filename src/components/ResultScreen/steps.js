@@ -23,7 +23,7 @@ const steps = (setMessage) => [
             height={40}
             style={{ margin: 4, marginRight: 12 }}
           />{' '}
-          wszystko ok
+          Pacjent nie jest w grupie ryzyka
         </div>
         <Button
           sx={{
@@ -59,7 +59,7 @@ const steps = (setMessage) => [
             height={48}
             style={{ marginRight: 8 }}
           />{' '}
-          pacjent może wymagać hospitalizacji
+          Pacjent może wymagać hospitalizacji
         </div>
         <Button
           sx={{
@@ -96,7 +96,7 @@ const steps = (setMessage) => [
             height={48}
             style={{ marginRight: 8 }}
           />{' '}
-          pacjent w grupie ryzyka
+          Pacjent znajduje się w grupie ryzyka
         </div>{' '}
         <Button
           sx={{
