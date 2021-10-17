@@ -10,7 +10,7 @@ This project consist of a python model data, mobile/web app and presentation
 
 ## Screenshots
 
-| ![screenshot_1](/screenshots/mobile_app_screenshot.png) | ![screenshot_2](/screenshots/mobile_app_screenshot2.png) | ![screenshot_2a](/screenshots/mobile_app_screenshot2a.png) | ![screenshot_2b](/screenshots/mobile_app_screenshot2b.png) | ![screenshot_3](/screenshots/mobile_app_screenshot3.png) | ![screenshot_4](/screenshots/mobile_app_screenshot4.png) |
+| ![screenshot_1](/screenshots/mobile_app_screenshot.png) | ![screenshot_2](/screenshots/s22.png) | ![screenshot_2a](/screenshots/s23.png) | ![screenshot_2b](/screenshots/s23.png) | ![screenshot_3](/screenshots/mobile_app_screenshot3.png) | ![screenshot_4](/screenshots/mobile_app_screenshot4.png) |
 | ------------------------------------------------------- | -------------------------------------------------------- | ---------------------------------------------------------- | ---------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
 
 ## How to install
