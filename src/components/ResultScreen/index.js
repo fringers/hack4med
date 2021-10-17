@@ -48,7 +48,7 @@ const HomeScreen = () => {
 
   const updatedSteps = steps(setMessage);
 
-  const ok = message == 1;
+  const ok = message == 1 || !isTourOpen;
   const warning = message == 2;
   const error = message == 3;
 

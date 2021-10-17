@@ -2,7 +2,7 @@ import makeStyles from '@mui/styles/makeStyles';
 
 export default makeStyles((theme) => ({
   container: {
-    background: theme.palette.background.default,
+    background: theme.palette.background.new2,
     borderRadius: 44,
     height: '100%',
   },

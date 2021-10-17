@@ -3,7 +3,7 @@ import { Button } from '@mui/material';
 
 const steps = (setMessage) => [
   {
-    content: 'I aplikacja zwróci jeden z trzech statusów',
+    content: 'A aplikacja zwróci jeden z trzech statusów',
   },
   {
     // eslint-disable-next-line react/display-name
@@ -105,6 +105,9 @@ const steps = (setMessage) => [
             display: 'flex',
             justifySelf: 'center',
             backgroundColor: '#fa6450',
+            '&:hover': {
+              backgroundColor: 'red',
+            },
           }}
           variant="contained"
           onClick={() => {
@@ -115,6 +118,15 @@ const steps = (setMessage) => [
         </Button>
       </div>
     ),
+  },
+  {
+    content:
+      'I tak w kilku prostych krokach sprawdziliśmy stan naszego pacjenta 🚀',
+  },
+  {
+    selector: '[data-tour="control-panel"]',
+    content:
+      'Jeśli chcesz możesz zrestartować aplikację lub sprawdzić jak działa w trybie offline, dziękujemy!',
   },
 ];
 

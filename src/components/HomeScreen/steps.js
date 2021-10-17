@@ -1,7 +1,7 @@
 const steps = [
   {
     content:
-      'Cześć, widzę, że nowym użytkownikiem, poprowadzę Cię po aplikacji.',
+      'Cześć, widzę, że jesteś nowym użytkownikiem, poprowadzę Cię przez aplikację, to zajmie tylko chwilę!',
   },
   {
     selector: '[data-tour="two"]',
@@ -14,7 +14,7 @@ const steps = [
   },
   {
     selector: '[data-tour="four"]',
-    content: 'Wieć wystarczy że klikniesz sprawdź',
+    content: 'Więc wystarczy że klikniesz sprawdź, spróbuj',
   },
 ];
 

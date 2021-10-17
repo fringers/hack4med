@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import { AnimatedSwitch, AnimatedRoute } from 'react-router-transition';
-import { Snackbar } from '@mui/material';
+import { Snackbar, Button } from '@mui/material';
 import makeStyles from '@mui/styles/makeStyles';
 import { ThemeProvider } from '@mui/material/styles';
 import { theme, offlineTheme } from './themes';
@@ -24,8 +24,19 @@ const useStyles = makeStyles(() => ({
       },
     },
   },
+  manageApp: {
+    position: 'absolute',
+    display: 'flex',
+    flexDirection: 'column',
+    left: 452 + 48 + 100,
+    top: 48,
+    '& > *:first-child': {
+      marginBottom: 8,
+    },
+  },
   snackbar: {
-    bottom: 80,
+    position: 'absolute !important',
+    bottom: '90px !important',
   },
   mobileWrapper: {
     position: 'absolute',
@@ -48,7 +59,7 @@ const getSnackbarMessgae = (online, uploading) => {
   return message;
 };
 
-export const UserContext = React.createContext(undefined);
+export const UserContext = React.createContext();
 
 const App = () => {
   const classes = useStyles();
@@ -58,13 +69,12 @@ const App = () => {
 
   const handleNetworkChange = () => {
     setOnline(window.navigator.onLine);
-    let myCache = window.myCache;
-
-    if (myCache.length) setUploading(true);
     setOpenSnackbar(true);
 
+    //TODO: for cached requests
+    let myCache = window.myCache;
+    if (myCache.length) setUploading(true);
     if (myCache.length) {
-      //TODO: for cached requests
       // myCache.forEach(
       // );
       window.myCache = [];
@@ -86,9 +96,31 @@ const App = () => {
   }, []);
 
   return (
-    <UserContext.Provider value={'user'}>
+    <UserContext.Provider value={online}>
       <ThemeProvider theme={online ? theme : offlineTheme}>
         <img className={classes.img} src="/iphone-12_b.png" />
+        <div className={classes.manageApp} data-tour="control-panel">
+          <Button
+            variant="contained"
+            onClick={() => {
+              setOnline(!online);
+              setOpenSnackbar(true);
+            }}
+            color="primary"
+          >
+            {online ? 'Tryb offline' : 'Tryb online'}
+          </Button>
+          <Button
+            variant="contained"
+            onClick={() => {
+              localStorage.clear();
+              window.location.href = '/';
+            }}
+            color="primary"
+          >
+            Odśwież aplikację
+          </Button>
+        </div>
         <div className={classes.mobileWrapper}>
           <Snackbar
             classes={{ root: classes.snackbar }}

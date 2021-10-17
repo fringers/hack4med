@@ -1,10 +1,11 @@
-import React, { useState, Fragment } from 'react';
+import React, { useState, Fragment, useContext } from 'react';
 import { useHistory } from 'react-router-dom';
 import Tour from 'reactour';
 import { Button, TextField, MenuItem } from '@mui/material';
 import { Typography } from '@mui/material';
 import { teal } from '@mui/material/colors';
 
+import { UserContext } from '../App';
 import steps from './steps';
 import useStyles from './styles';
 
@@ -45,6 +46,8 @@ const INPUTS = [
 const HomeScreen = () => {
   const classes = useStyles();
   const history = useHistory();
+  const online = useContext(UserContext);
+
   const [isTourOpen, setIsTourOpen] = useState(
     localStorage.getItem('sawTour1') !== 'false'
   );
@@ -60,11 +63,11 @@ const HomeScreen = () => {
     }, {})
   );
 
-  const isValid = !!plec && !!wiek && !!wzrost && !!masa && !!bmi;
-
   const handleSubmit = () => {
     history.push('/result');
+    localStorage.setItem('sawTour1', 'false');
   };
+  const isValid = !!plec && !!wiek && !!wzrost && !!masa && !!bmi;
 
   return (
     <div className={classes.container}>
@@ -181,7 +184,7 @@ const HomeScreen = () => {
           onClick={() => handleSubmit()}
           type="submit"
           color="secondary"
-          disabled={!isValid}
+          disabled={!isValid || !online}
         >
           Sprawdź
         </Button>
