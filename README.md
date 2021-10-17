@@ -1,6 +1,6 @@
 # Hack4med app
 
-This project consist of a python model data, mobile/web app and presentation
+This project consist of a python model, mobile/web app and presentation
 
 ## Useful links
 
