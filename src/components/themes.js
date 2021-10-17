@@ -36,8 +36,5 @@ export const offlineTheme = createTheme({
       new: `linear-gradient(60deg, #FFF 0%, ${teal[200]} 100%);`,
       new2: `linear-gradient(60deg, #FFF 0%, ${teal[50]} 100%);`,
     },
-    //   paper: `linear-gradient(60deg, #FFF 0%, ${teal[200]} 100%);`,
-    //   default: `linear-gradient(60deg, #FFF 0%, ${teal[50]} 100%);`,
-    // },
   },
 });

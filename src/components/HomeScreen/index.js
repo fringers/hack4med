@@ -84,7 +84,7 @@ const HomeScreen = () => {
       />
       <div className={classes.titleWrapper}>
         <Typography variant="h5" data-tour="two">
-          Sprawdź osobę
+          Sprawdź pacjenta
         </Typography>
       </div>
       <div className={classes.formWrapper} data-tour="three">
@@ -159,7 +159,7 @@ const HomeScreen = () => {
         {INPUTS.map((value) => (
           <Fragment key={value[0]}>
             <Typography fontWeight="bold" color="primary">
-              {value}
+              {value[0]}
             </Typography>
             <TextField
               sx={{ mb: 2 }}
