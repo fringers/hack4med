@@ -3,7 +3,7 @@ import { Button } from '@mui/material';
 
 const steps = (setMessage) => [
   {
-    content: 'A aplikacja zwróci jeden z trzech statusów',
+    content: 'A aplikacja zwróci jeden z dwóch statusów',
   },
   {
     // eslint-disable-next-line react/display-name
@@ -42,43 +42,43 @@ const steps = (setMessage) => [
       </div>
     ),
   },
-  {
-    // eslint-disable-next-line react/display-name
-    content: (
-      <div style={{ display: 'flex', flexDirection: 'column' }}>
-        <div
-          style={{
-            display: 'flex',
-            justifyContent: 'left',
-            alignItems: 'center',
-          }}
-        >
-          <img
-            src="warning1.png"
-            width={48}
-            height={48}
-            style={{ marginRight: 8 }}
-          />{' '}
-          Pacjent może wymagać hospitalizacji
-        </div>
-        <Button
-          sx={{
-            mt: 2,
-            alignSelf: 'center',
-            display: 'flex',
-            justifySelf: 'center',
-          }}
-          variant="contained"
-          color="secondary"
-          onClick={() => {
-            setMessage(2);
-          }}
-        >
-          Sprawdź
-        </Button>
-      </div>
-    ),
-  },
+  // {
+  //   // eslint-disable-next-line react/display-name
+  //   content: (
+  //     <div style={{ display: 'flex', flexDirection: 'column' }}>
+  //       <div
+  //         style={{
+  //           display: 'flex',
+  //           justifyContent: 'left',
+  //           alignItems: 'center',
+  //         }}
+  //       >
+  //         <img
+  //           src="warning1.png"
+  //           width={48}
+  //           height={48}
+  //           style={{ marginRight: 8 }}
+  //         />{' '}
+  //         Pacjent może wymagać hospitalizacji
+  //       </div>
+  //       <Button
+  //         sx={{
+  //           mt: 2,
+  //           alignSelf: 'center',
+  //           display: 'flex',
+  //           justifySelf: 'center',
+  //         }}
+  //         variant="contained"
+  //         color="secondary"
+  //         onClick={() => {
+  //           setMessage(2);
+  //         }}
+  //       >
+  //         Sprawdź
+  //       </Button>
+  //     </div>
+  //   ),
+  // },
   {
     // eslint-disable-next-line react/display-name
     content: (

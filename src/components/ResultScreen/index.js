@@ -17,14 +17,14 @@ const OK = () => (
   </>
 );
 
-const WARNING = () => (
-  <>
-    <img src="warning1.png" width="100%" style={{ marginRight: 8 }} />
-    <Typography sx={{ mt: 8, textAlign: 'center' }} gutterBottom variant="h4">
-      Pacjent może być w grupie ryzyka
-    </Typography>
-  </>
-);
+// const WARNING = () => (
+//   <>
+//     <img src="warning1.png" width="100%" style={{ marginRight: 8 }} />
+//     <Typography sx={{ mt: 8, textAlign: 'center' }} gutterBottom variant="h4">
+//       Pacjent może być w grupie ryzyka
+//     </Typography>
+//   </>
+// );
 
 const ERROR = () => (
   <>
@@ -46,7 +46,7 @@ const HomeScreen = () => {
   const updatedSteps = steps(setMessage);
 
   const ok = message == 1 || !isTourOpen;
-  const warning = message == 2;
+  // const warning = message == 2;
   const error = message == 3;
 
   return (
@@ -54,7 +54,7 @@ const HomeScreen = () => {
       className={classNames(
         classes.container,
         ok && classes.ok,
-        warning && classes.warning,
+        // warning && classes.warning,
         error && classes.error
       )}
     >
@@ -73,7 +73,7 @@ const HomeScreen = () => {
       />
       <div className={classes.contentWrapper}>
         {ok && <OK />}
-        {warning && <WARNING />}
+        {/* {warning && <WARNING />} */}
         {error && <ERROR />}
       </div>
       <div className={classes.buttonWrapper}>

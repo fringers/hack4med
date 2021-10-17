@@ -17,30 +17,8 @@ import useStyles from './styles';
 */
 
 const INPUTS = [
-  ['Przeniesienie', 'Nie'],
-  ['Oddech', 'Tak'],
-  ['Astma', 'Nie'],
-  ['Zapalenie płuc', 'Nie'],
-  ['RRS', 'Nie'],
-  ['RRD', 'Nie'],
-  ['PO2_ATM', 'Nie'],
-  ['AS', 'Nie'],
-  ['NT', 'Nie'],
-  ['DM', 'Nie'],
   ['HF', 'Nie'],
-  ['AF', 'Nie'],
-  ['UDAR', 'Nie'],
-  ['CHD', 'Nie'],
-  ['MI', 'Nie'],
-  ['HDCZ', 'Nie'],
-  ['BB', 'Nie'],
-  ['STATYNA', 'Nie'],
-  ['ASA', 'Nie'],
-  ['NOAC', 'Nie'],
-  ['MRA', 'Nie'],
-  ['ACE', 'Nie'],
-  ['SARTANY', 'Nie'],
-  ['CA_BLOKER', 'Nie'],
+  ['PCHN', 'Nie'],
 ];
 
 const HomeScreen = () => {
@@ -51,11 +29,10 @@ const HomeScreen = () => {
   const [isTourOpen, setIsTourOpen] = useState(
     localStorage.getItem('sawTour1') !== 'false'
   );
-  const [plec, setPlec] = useState('Kobieta');
-  const [wiek, setWiek] = useState(20);
-  const [wzrost, setWzrost] = useState(165);
-  const [masa, setMasa] = useState(60);
-  const [bmi, setBmi] = useState(20);
+
+  const [RRD, setRRD] = useState(82);
+  const [Oddech, setOddech] = useState(16);
+  const [AS, setAS] = useState(80);
   const [fields, setFields] = useState(
     INPUTS.reduce((result, item) => {
       result[item[0]] = item[1];
@@ -67,7 +44,7 @@ const HomeScreen = () => {
     history.push('/result');
     localStorage.setItem('sawTour1', 'false');
   };
-  const isValid = !!plec && !!wiek && !!wzrost && !!masa && !!bmi;
+  const isValid = !!RRD && !!Oddech && !!AS;
 
   return (
     <div className={classes.container}>
@@ -89,71 +66,42 @@ const HomeScreen = () => {
       </div>
       <div className={classes.formWrapper} data-tour="three">
         <Typography fontWeight="bold" color="primary">
-          Płeć
-        </Typography>
-        <TextField
-          sx={{ mb: 2 }}
-          error={!plec}
-          select
-          value={plec}
-          color="primary"
-          placeholder="Kobieta"
-          onChange={(e) => setPlec(e.target.value)}
-        >
-          <MenuItem value="Kobieta">Kobieta</MenuItem>
-          <MenuItem value="Mężczyzna">Mężczyzna</MenuItem>
-        </TextField>
-
-        <Typography fontWeight="bold" color="primary">
-          Wiek
+          RRD
         </Typography>
         <TextField
           inputProps={{ inputMode: 'numeric', pattern: '[0-9]*' }}
-          error={!wiek}
+          error={!RRD}
           placeholder="20"
           sx={{ mb: 2 }}
           variant="outlined"
-          value={wiek}
-          onChange={(e) => setWiek(e.target.value)}
+          value={RRD}
+          onChange={(e) => setRRD(e.target.value)}
         />
 
         <Typography fontWeight="bold" color="primary">
-          Wzrost
+          Oddech
         </Typography>
         <TextField
           inputProps={{ inputMode: 'numeric', pattern: '[0-9]*' }}
-          error={!wzrost}
+          error={!Oddech}
+          placeholder="20"
+          sx={{ mb: 2 }}
+          variant="outlined"
+          value={Oddech}
+          onChange={(e) => setOddech(e.target.value)}
+        />
+
+        <Typography fontWeight="bold" color="primary">
+          AS
+        </Typography>
+        <TextField
+          inputProps={{ inputMode: 'numeric', pattern: '[0-9]*' }}
+          error={!AS}
           placeholder="168"
           sx={{ mb: 2 }}
           variant="outlined"
-          value={wzrost}
-          onChange={(e) => setWzrost(e.target.value)}
-        />
-
-        <Typography fontWeight="bold" color="primary">
-          Masa ciała
-        </Typography>
-        <TextField
-          inputProps={{ inputMode: 'numeric', pattern: '[0-9]*' }}
-          error={!masa}
-          placeholder="70"
-          sx={{ mb: 2 }}
-          variant="outlined"
-          value={masa}
-          onChange={(e) => setMasa(e.target.value)}
-        />
-
-        <Typography fontWeight="bold" color="primary">
-          BMI
-        </Typography>
-        <TextField
-          inputProps={{ inputMode: 'numeric', pattern: '[0-9]*' }}
-          placeholder="20"
-          error={!bmi}
-          sx={{ mb: 2 }}
-          variant="outlined"
-          value={bmi}
-          onChange={(e) => setBmi(e.target.value)}
+          value={AS}
+          onChange={(e) => setAS(e.target.value)}
         />
 
         {INPUTS.map((value) => (
