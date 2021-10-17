@@ -11,30 +11,27 @@ import useStyles from './styles';
 const OK = () => (
   <>
     <img src="ok2.png" width="90%" style={{ margin: 4, marginRight: 12 }} />
-    <Typography sx={{ mt: 6 }} gutterBottom variant="h4">
-      Wszystko ok
+    <Typography sx={{ mt: 10, textAlign: 'center' }} gutterBottom variant="h4">
+      Pacjent nie jest w grupie ryzyka
     </Typography>
-    <Typography color="primary">Pacjent nie jest w grupie ryzyka</Typography>
   </>
 );
 
 const WARNING = () => (
   <>
     <img src="warning1.png" width="100%" style={{ marginRight: 8 }} />
-    <Typography sx={{ mt: 6 }} gutterBottom variant="h4">
-      Istnieje ryzyko
+    <Typography sx={{ mt: 8, textAlign: 'center' }} gutterBottom variant="h4">
+      Pacjent może być w grupie ryzyka
     </Typography>
-    <Typography color="red">Pacjent może być w grupie ryzyka</Typography>
   </>
 );
 
 const ERROR = () => (
   <>
     <img src="error1.png" width="100%" style={{ marginRight: 8 }} />
-    <Typography sx={{ mt: 6 }} gutterBottom variant="h4">
-      Pacjent w grupie ryzyka
+    <Typography sx={{ mt: 8, textAlign: 'center' }} gutterBottom variant="h4">
+      Pacjent znajduje się w grupie ryzyka
     </Typography>
-    <Typography color="red">Pacjent znajduje się w grupie ryzyka</Typography>
   </>
 );
 

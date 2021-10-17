@@ -96,7 +96,7 @@ const steps = (setMessage) => [
             height={48}
             style={{ marginRight: 8 }}
           />{' '}
-          pacjent w stanie zagrożenia
+          pacjent w grupie ryzyka
         </div>{' '}
         <Button
           sx={{
