@@ -18,7 +18,7 @@ export default makeStyles((theme) => ({
     display: 'flex',
     flexDirection: 'column',
     height: '80%',
-    overflow: 'scroll',
+    overflowY: 'scroll',
   },
   textField: {
     marginBottom: theme.spacing(2),
