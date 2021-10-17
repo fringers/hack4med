@@ -1,6 +1,6 @@
 {
-  "short_name": "Dzik Alert",
-  "name": "Dzik Alert",
+  "short_name": "Kalkulator ryzyka",
+  "name": "Kalkulator ryzyka",
   "icons": [
     {
       "src": "favicon.ico",
@@ -20,7 +20,7 @@
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#bc9c6d",
-  "background_color": "#E5DECD",
+  "theme_color": "##009688",
+  "background_color": "#e0f2f1",
   "orientation": "portrait"
 }
